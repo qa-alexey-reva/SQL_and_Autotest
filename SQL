@@ -1,5 +1,13 @@
 Задание 1
 
+SELECT c.login, 
+    COUNT(*) AS "Количество заказов в доставке"
+    FROM "Couriers" AS c 
+    INNER JOIN "Orders" AS o ON c.id = o."courierId"
+    WHERE o."inDelivery" = ‘true’ 
+    GROUP BY c.login;
+
+
 Задание 2
 
 SELECT track, 
